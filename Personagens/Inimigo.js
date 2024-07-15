@@ -44,6 +44,7 @@ class Inimigo extends Personagem {
         if (this.vida <= 0) {
             this.vida = 0;
         }
+        return dano;
     }
 
     // O inimigo pode dropar dinheiro ao ser derrotado

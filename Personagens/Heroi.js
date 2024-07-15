@@ -18,10 +18,10 @@ class Heroi extends Personagem {
         this.sorte = sorte; 
 
         // O herói terá uma arma inicial
-        this.arma = new Arma('Espada de Madeira', 1, 1);
+        this.arma = new Arma('Espada de Madeira', 1, 2);
 
         // O herói terá uma armadura inicial
-        this.armadura = new Armadura('Armadura de Couro', 1, 1);
+        this.armadura = new Armadura('Armadura de Couro', 1, 2);
     }
 
     // O herói terá uma carteira que armazenará a quantidade de dinheiro que ele possui
@@ -29,7 +29,7 @@ class Heroi extends Personagem {
 
     experienciaAtual = 0;
     experienciaProximoNivel = 5;
-    vidaMaxima = this.nivel * 5;
+    vidaMaxima = this.nivel * 7;
     vidaAtual = this.vidaMaxima;
     pocoes = [];
 
@@ -85,6 +85,7 @@ class Heroi extends Personagem {
             this.experienciaAtual -= this.experienciaProximoNivel;
             this.experienciaProximoNivel += 5;
             this.nivel++;
+            this.vidaMaxima = this.nivel * 7;
             this.uparAtributos();
         }
     }
@@ -114,6 +115,7 @@ class Heroi extends Personagem {
         if (this.vidaAtual <= 0) {
             this.vidaAtual = 0;
         }
+        return danoFinal;
     }
 
     // Método para usar uma poção, recupera o valor de vida da poção
