@@ -4,8 +4,6 @@ const Armadura = require('../Loja/Armadura');
 
 class Heroi extends Personagem {
 
-
-
     constructor(nome, nivel, forca, agilidade, sorte) {
         super(nome, nivel);
         // Atributos específicos do herói
@@ -18,6 +16,12 @@ class Heroi extends Personagem {
 
         // Sorte do herói que influencia o drop de dinheiro
         this.sorte = sorte; 
+
+        // O herói terá uma arma inicial
+        this.arma = new Arma('Espada de Madeira', 1, 1);
+
+        // O herói terá uma armadura inicial
+        this.armadura = new Armadura('Armadura de Couro', 1, 1);
     }
 
     // O herói terá uma carteira que armazenará a quantidade de dinheiro que ele possui
@@ -107,6 +111,9 @@ class Heroi extends Personagem {
             danoFinal = 0;
         }
         this.vidaAtual -= danoFinal;
+        if (this.vidaAtual <= 0) {
+            this.vidaAtual = 0;
+        }
     }
 
     // Método para usar uma poção, recupera o valor de vida da poção
@@ -120,6 +127,21 @@ class Heroi extends Personagem {
             this.pocoes.shift();
             }
         }
+    }
+
+    // Método para exibir as informações do herói
+    exibirHeroi() {
+        console.log('Nome: ' + this.nome);
+        console.log('Nível: ' + this.nivel);
+        console.log('Força: ' + this.forca);
+        console.log('Agilidade: ' + this.agilidade);
+        console.log('Sorte: ' + this.sorte);
+        console.log('Vida: ' + this.vidaAtual + '/' + this.vidaMaxima);
+        console.log('Experiência: ' + this.experienciaAtual + '/' + this.experienciaProximoNivel);
+        console.log('Carteira: ' + this.carteira);
+        console.log('Arma: ' + this.arma.nome);
+        console.log('Armadura: ' + this.armadura.nome);
+        console.log('Poções: ' + this.pocoes.length);
     }
 }
 

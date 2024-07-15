@@ -8,10 +8,9 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-const heroi = new Heroi('Herói', 10, 5, 100, 3);
-const inimigo = new Inimigo('Inimigo', 8, 3, 80, 1);
+const heroi = new Heroi('Herói', 1, 1, 1, 1);
 
-const dungeon = new Dungeon ('Fase 1', [inimigo]);
+const dungeon = new Dungeon ('Dungeon 1');
 
 rl.question('Pressione Enter para iniciar a Dungeon ...', (answer) => {
     dungeon.iniciarDungeon (heroi);

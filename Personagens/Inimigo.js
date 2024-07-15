@@ -12,7 +12,7 @@ class Inimigo extends Personagem {
     // Métodos específicos do inimigo
     gerarRaridade()
     {
-        numero = Math.floor(Math.random() * 10) + 1
+        let numero = Math.floor(Math.random() * 10) + 1
         if (numero <= 7)
         {
             return 1;
@@ -24,6 +24,25 @@ class Inimigo extends Personagem {
         else
         {
             return 3;
+        }
+    }
+
+    // Método para atacar, retorna o dano que o inimigo vai causar
+    atacar() {
+        // Lógica de ataque
+        let dano = this.nivel + this.raridade*2;
+        return dano;
+    }
+
+    // Método para receber dano, recebe o dano que o inimigo vai receber
+    receberDano(dano) {
+        // Lógica para receber dano
+        if (dano < 0) {
+            dano = 0;
+        }
+        this.vida -= dano;
+        if (this.vida <= 0) {
+            this.vida = 0;
         }
     }
 
