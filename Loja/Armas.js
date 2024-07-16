@@ -7,8 +7,6 @@ class Arma extends Item {
         super(nome, 'Arma', valor);
         this.dano = dano;
     }
-
-    // Métodos específicos da arma
 }
 
 module.exports = Arma;

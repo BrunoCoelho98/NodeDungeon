@@ -1,9 +1,6 @@
-const Item = require('./Item');
 const Armadura = require('./Armadura');
 const Armas = require('./Armas');
 const Pocoes = require('./Pocoes');
-const Heroi = require('../Personagens/Heroi');
-
 
 class Loja {
     constructor(heroi) {

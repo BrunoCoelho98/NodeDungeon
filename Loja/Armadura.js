@@ -8,7 +8,6 @@ class Armadura extends Item {
         this.defesa = defesa;
     }
 
-    // Métodos específicos da armadura
 }
 
 module.exports = Armadura;

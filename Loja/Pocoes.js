@@ -7,8 +7,6 @@ class Pocao extends Item {
         super(nome, 'Pocao', valor);
         this.cura = cura;
     }
-
-    // Métodos específicos da poção
 }
 
 module.exports = Pocao;
