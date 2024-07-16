@@ -15,6 +15,8 @@ class Dungeon {
         for (let i = 0; i < numeroInimigos; i++) {
             // Antes de cada batalha, o herói pode optar por tomar uma poção de cura caso ele tenha uma disponível
             if (heroi.pocoes.length > 0) {
+                console.log('Vida atual: ' + heroi.vidaAtual + ' / ' + heroi.vidaMaxima);
+                console.log('Você possui ' + heroi.pocoes.length + ' poção(ões) de cura!');
                 let resposta = prompt('Você deseja tomar uma poção de cura? (S/N)');
                 if (resposta.toUpperCase() === 'S') {
                     heroi.usarPocao();
@@ -44,6 +46,8 @@ class Dungeon {
         if (heroi.vidaAtual <= 0) {
             console.log('Você foi derrotado!');
             console.log('Fim da Dungeon!');
+            console.log('Status final:');
+            heroi.exibirHeroi();
             process.exit(0);
         } else {
             console.log('Você derrotou o inimigo ' + inimigo.nome + '!');

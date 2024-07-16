@@ -123,11 +123,11 @@ class Heroi extends Personagem {
     usarPocao() {
         // Verifica se o herói possui poções
         if (this.pocoes.length > 0) {
-            this.vidaAtual += this.pocoes[0].cura;
+            this.vidaAtual += this.pocoes[this.pocoes.length -1].cura;
             // Não permitir que a vida atual ultrapasse a vida máxima
             if (this.vidaAtual > this.vidaMaxima) {
                 this.vidaAtual = this.vidaMaxima;
-            this.pocoes.shift();
+            this.pocoes.pop();
             }
         }
         console.log('Vida atual: ' + this.vidaAtual + '/' + this.vidaMaxima);

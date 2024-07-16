@@ -7,9 +7,9 @@ const Heroi = require('../Personagens/Heroi');
 
 class Loja {
     constructor(heroi) {
-        this.arma = new Armas('Espada nv ' + heroi.nivel, heroi.nivel*10, heroi.nivel + 2);
-        this.armadura = new Armadura('Armadura nv ' + heroi.nivel, heroi.nivel*10, heroi.nivel + 2);
-        this.pocao = new Pocoes('Poção de Cura (' + heroi.nivel*5 + ' PV)', heroi.nivel*2, heroi.nivel * 5);
+        this.arma = new Armas('Espada nv ' + heroi.nivel, heroi.nivel*7, heroi.nivel + 2);
+        this.armadura = new Armadura('Armadura nv ' + heroi.nivel, heroi.nivel*7, heroi.nivel + 2);
+        this.pocao = new Pocoes('Poção de Cura (' + heroi.nivel*4 + ' PV)', heroi.nivel*3, heroi.nivel * 4);
         this.heroi = heroi;
     }  
 
