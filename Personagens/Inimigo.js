@@ -51,14 +51,14 @@ class Inimigo extends Personagem {
     droparDinheiro()
     {
         // A quantidade de dinheiro dropada é baseada na raridade do inimigo
-        return (Math.floor(Math.random() * this.nivel) + 1) * this.raridade;
+        return (Math.floor(Math.random() * this.nivel*5) + 1) * this.raridade;
     }
 
     // O inimigo pode dropar experiência ao ser derrotado
     droparExperiencia()
     {
         // A quantidade de experiência dropada é baseada na raridade do inimigo
-        return (Math.floor(Math.random() * this.nivel) + 1) * this.raridade;
+        return (Math.floor(Math.random() * this.nivel*5) + 1) * this.raridade;
     }
 }
 
