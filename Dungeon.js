@@ -1,5 +1,5 @@
-const Heroi = require('./Personagens/Heroi');
 const Inimigo = require('./Personagens/Inimigo');
+const prompt = require('prompt-sync')();
 
 class Dungeon {
     constructor(nome) {
@@ -13,6 +13,13 @@ class Dungeon {
         let numeroInimigos = Math.floor(Math.random() * 3) + 1;
         console.log('Você encontrou ' + numeroInimigos + ' inimigo(s)!');
         for (let i = 0; i < numeroInimigos; i++) {
+            // Antes de cada batalha, o herói pode optar por tomar uma poção de cura caso ele tenha uma disponível
+            if (heroi.pocoes.length > 0) {
+                let resposta = prompt('Você deseja tomar uma poção de cura? (S/N)');
+                if (resposta.toUpperCase() === 'S') {
+                    heroi.usarPocao();
+                }
+            }
             let inimigo = new Inimigo('Inimigo ' + (i + 1), heroi.nivel);
             console.log('Inimigo ' + inimigo.nome + ' encontrado!' + '\nEste é um inimigo de raridade ' + inimigo.raridade);
             this.batalhar(heroi, inimigo);

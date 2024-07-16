@@ -39,6 +39,9 @@ rl.question('Pressione Enter para iniciar a Dungeon ...', async (answer) => {
     while (heroi.vidaAtual > 0) {
         // Iniciar a dungeon
         dungeon.iniciarDungeon (heroi);
+        // Após cada dungeon, o herói pode upar de nível
+        heroi.uparHeroi();
+
         
         // Se o jogador sobreviver, perguntar se ele quer acessar a loja
         const answer = await questionAsync('Você deseja acessar a loja? (S/N)');

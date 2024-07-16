@@ -1,6 +1,7 @@
 const Personagem = require('./Personagem');
 const Arma = require('../Loja/Armas');
 const Armadura = require('../Loja/Armadura');
+const prompt = require('prompt-sync')();
 
 class Heroi extends Personagem {
 
@@ -79,13 +80,13 @@ class Heroi extends Personagem {
     // A cada nível, a experiência necessária para upar aumenta em 5
     /* Método para upar o herói, recebe a quantidade de experiência que o herói ganhou e faz um loop até que a experiência seja menor que a experiência necessária para upar, depois
     chama a função de upar atributos com a quantidade de níveis que o herói upou */
-    uparHeroi(experiencia) {
-        this.experienciaAtual += experiencia;
+    uparHeroi() {
         while (this.experienciaAtual >= this.experienciaProximoNivel) {
             this.experienciaAtual -= this.experienciaProximoNivel;
             this.experienciaProximoNivel += 5;
             this.nivel++;
             this.vidaMaxima = this.nivel * 7;
+            this.vidaAtual += 7;
             this.uparAtributos();
         }
     }
@@ -129,6 +130,7 @@ class Heroi extends Personagem {
             this.pocoes.shift();
             }
         }
+        console.log('Vida atual: ' + this.vidaAtual + '/' + this.vidaMaxima);
     }
 
     // Método para exibir as informações do herói
