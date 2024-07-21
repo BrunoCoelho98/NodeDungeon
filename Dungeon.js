@@ -51,8 +51,8 @@ class Dungeon {
             process.exit(0);
         } else {
             console.log('Você derrotou o inimigo ' + inimigo.nome + '!');
-            let experiencia = inimigo.droparExperiencia();
-            let dinheiro = inimigo.droparDinheiro();
+            let experiencia = inimigo.droparExperiencia(heroi.sorte);
+            let dinheiro = inimigo.droparDinheiro(heroi.sorte);
             console.log('Você ganhou ' + experiencia + ' de experiência e ' + dinheiro + ' de dinheiro!');
             heroi.experienciaAtual += experiencia;
             heroi.carteira += dinheiro;
