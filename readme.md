@@ -13,6 +13,7 @@ Depois de cada Dungeon derrotada, você poderá upar de nível e aumentar seus a
     Sorte: Aumenta seu drop de dinheiro e experiência
 
 Além disso, depois de terminar uma Dungeon você poderá acessar a Loja, onde poderá comprar:
+
     Arma: Aumenta seu dano
 
     Armadura: Aumenta sua defesa
